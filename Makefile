@@ -75,8 +75,8 @@ GMPLD     := -L$(GMP_LIB_DIR) -lgmpxx -lgmp
 LINK         := $(CXXFLAGS) $(GMPLD)
 LINKD        := $(CXXDFLAGS) $(GMPLD)
 ifeq ($(PLATFORM),Darwin)
-  LINK  := $(LINK) -Wl,-no_pie
-  LINKD := $(LINK) -Wl,-no_pie
+  LINK  := $(LINK) -Wl
+  LINKD := $(LINK) -Wl
 endif
 
 
@@ -85,12 +85,12 @@ endif
 # ***********************-----------------+
 # | SRCS defines a generic bag of sources |
 # +---------------------------------------+
-MATH_SRCS    := 
+MATH_SRCS    :=
 UTIL_SRCS    := timer log
 ISCT_SRCS    := empty3d quantization
-MESH_SRCS    := 
-RAWMESH_SRCS := 
-ACCEL_SRCS   := 
+MESH_SRCS    :=
+RAWMESH_SRCS :=
+ACCEL_SRCS   :=
 FILE_SRCS    := files ifs off
 SRCS         := \
     cork \
